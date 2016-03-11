@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.zjp.znews.MyDate;
 import com.example.zjp.znews.R;
 import com.example.zjp.znews.model.News_item;
 
@@ -47,26 +48,8 @@ public class NewsAdapter extends ArrayAdapter<News_item>{
         textView_smsbody.setText(item.getSmsbody());
 
 
-        textView_date.setText(gettime(item.getDate()));
+        textView_date.setText(item.getDate());
         return view;
     }
 
-    public String gettime(Date date){
-        String time="";
-        SimpleDateFormat dateFormat = new SimpleDateFormat(
-                "yyyy年MM月dd日 kk:mm");
-
-
-        String before = dateFormat.format(date);
-        String now = dateFormat.format(new java.util.Date());
-
-        if(now.substring(0, 11).equals(before.substring(0,11))){
-            time=before.substring(12,17);
-        }
-        else if(now.substring(0,4).equals(before.substring(0,4))){
-            time=before.substring(5,11);
-        }
-        else time=before.substring(0,11);
-        return time;
-    }
 }

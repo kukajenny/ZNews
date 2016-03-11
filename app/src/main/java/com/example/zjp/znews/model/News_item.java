@@ -21,11 +21,11 @@ public class News_item {
 
     private String smsbody;
 
-    private Date date;
+    private String date;
 
     private int typeId;
 
-    public News_item(String name,String telnum,String smsbody,Date date,int typeId){
+    public News_item(String name,String telnum,String smsbody,String date,int typeId){
         this.bitmap =bitmap;
         this.name=name;
         this.telnum=telnum;
@@ -50,7 +50,7 @@ public class News_item {
         return smsbody;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
