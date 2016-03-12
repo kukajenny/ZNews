@@ -56,9 +56,9 @@ public class NewsShowActivity extends AppCompatActivity implements ContainerView
 
         Getsms getsms = new Getsms(this,Get_item_list,telnum);
         news_List = getsms.getSmsInPhone();
-
         contentView.initCardView(this, R.layout.sliding_card_item, R.id
                 .sliding_card_content_view);
+
     }
 
     @Override
@@ -68,12 +68,12 @@ public class NewsShowActivity extends AppCompatActivity implements ContainerView
 
         if (news_item != null) {
 
-            textView_telnum = (TextView) findViewById(R.id.card_item_textview_telnum);
-            textView_smsbody = (TextView)findViewById(R.id.card_item_textview_smsbody);
-            textView_time = (TextView) findViewById(R.id.card_item_textview_time);
-            textView_type = (TextView) findViewById(R.id.card_item_textview_type);
+            textView_telnum = (TextView) card.findViewById(R.id.card_item_textview_telnum);
+            textView_smsbody = (TextView)card.findViewById(R.id.card_item_textview_smsbody);
+            textView_time = (TextView) card.findViewById(R.id.card_item_textview_time);
+            textView_type = (TextView) card.findViewById(R.id.card_item_textview_type);
             LogUtil.d("mytype",news_item.getTelnum()+textView_telnum+textView_smsbody);
-            textView_telnum.setText("");
+            textView_telnum.setText(news_item.getTelnum());
             textView_smsbody.setText(news_item.getSmsbody());
             textView_time.setText(news_item.getDate());
 
